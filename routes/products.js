@@ -2,6 +2,8 @@ const express = require('express')
 let router = express.Router()
 let slugify = require('slugify')
 let productSchema = require('../schemas/products')
+let inventorySchema = require('../schemas/inventories')
+
 
 router.get('/', async (req, res) => {
     let queries = req.query;
@@ -50,6 +52,13 @@ router.post('/', async (req, res) => {
         price: req.body.price
     })
     await newProducts.save()
+    const newInventory = new inventorySchema({
+        product: newProducts._id,
+        stock: 0,
+        reserved: 0,
+        soldCount: 0
+    });
+    await newInventory.save();
     res.send(newProducts)
 })
 router.put('/:id', async (req, res) => {

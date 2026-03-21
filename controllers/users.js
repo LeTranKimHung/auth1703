@@ -49,6 +49,7 @@ module.exports = {
             return false;
         }
     },
+    //Ham ChangePassword
     ChangePassword: async function (user, oldPassword, newPassword) {
         // Kiểm tra oldPassword có khớp không
         let isMatch = bcrypt.compareSync(oldPassword, user.password);
