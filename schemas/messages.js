@@ -22,6 +22,10 @@ const messageSchema = new mongoose.Schema(
                 type: String,
                 required: [true, "Message text/path is required"]
             }
+        },
+        isDeleted: {
+            type: Boolean,
+            default: false
         }
     },
     {
