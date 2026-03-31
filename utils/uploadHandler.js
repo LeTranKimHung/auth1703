@@ -39,5 +39,10 @@ module.exports = {
         storage: storage,
         limits: 5 * 1025 * 1025,
         fileFilter: filterExcel
+    }),
+    // Chấp nhận mọi loại file (dùng cho messages)
+    uploadFile: multer({
+        storage: storage,
+        limits: 10 * 1024 * 1024  // 10MB
     })
 }

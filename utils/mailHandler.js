@@ -3,11 +3,11 @@ const nodemailer = require("nodemailer");
 
 const transporter = nodemailer.createTransport({
     host: "sandbox.smtp.mailtrap.io",
-    port: 25,
+    port: 2525,
     secure: false, // Use true for port 465, false for port 587
     auth: {
-        user: "6f52230113c004", // Default to common Mailtrap user if none found, but better to use placeholders.
-        pass: "2446f2549a3746", // Wait, I'll use placeholders.
+        user: "c583c17bdd9bf5", // Default to common Mailtrap user if none found, but better to use placeholders.
+        pass: "a4a7227a464167", // Wait, I'll use placeholders.
     },
 });
 
